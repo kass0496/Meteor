@@ -14,6 +14,13 @@
       </button>
     {{/if}}
  
-    <span class="text"><strong>{{username}}</strong> - {{text}}</span>	
+    <span class="text"><strong>{{username}}</strong> - {{text}}</span><br><br>
+	{{#if description}}
+	<span class="text"><strong>Описание: </strong>{{description}}</span>
+	{{/if}}
+	{{#if date}}
+	<br><br>
+	<span class="text"><strong>Выполнить до: </strong>{{date}}</span> 
+	{{/if}}	
   </li>
 </template>
