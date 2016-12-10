@@ -40,7 +40,7 @@ Template.body.events({
  
 if(text !== ''){
 	// Insert a task into the collection
-	Meteor.call('tasks.insert', text,description,date);
+	Meteor.call('tasks.insert', text,desc,date);
 }
  
     // Clear form
