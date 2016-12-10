@@ -31,8 +31,6 @@ Template.body.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();
-	
-	console.log(event);
  
     // Get value from form element
     const target = event.target;
@@ -40,8 +38,10 @@ Template.body.events({
 	const desc = target.desc.value;
     const date = target.date.value;
  
-    // Insert a task into the collection
-    Meteor.call('tasks.insert', text, desc, date);
+if(text !== ''){
+	// Insert a task into the collection
+	Meteor.call('tasks.insert', text,description,date);
+}
  
     // Clear form
     target.text.value = '';
