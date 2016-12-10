@@ -13,6 +13,8 @@
 	       {{#if currentUser}}
         <form class="new-task">
           <input type="text" name="text" placeholder="Type to add new tasks" />
+		  <input type="text" name="desc" placeholder="Type description" />
+          <input type="date" name="date">
         </form>
       {{/if}}
     </header>
@@ -24,3 +26,10 @@
     </ul>
   </div>
 </body>
+
+<template name="task">
+	<li>{{text}}</li>
+	<li>
+		{{text}} - {{desc}} : {{date}}
+	</li>
+</template>

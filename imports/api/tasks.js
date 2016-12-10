@@ -17,8 +17,10 @@ export const Tasks = new Mongo.Collection('tasks');
   });
 }
 Meteor.methods({
-  'tasks.insert'(text) {
+	'tasks.insert'(text, desc, date) {
     check(text, String);
+	check(desc, String);
+	check(date, String);
  
     // Make sure the user is logged in before inserting a task
     if (! this.userId) {
@@ -27,6 +29,8 @@ Meteor.methods({
  
     Tasks.insert({
       text,
+	  desc,
+	  date,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username,
